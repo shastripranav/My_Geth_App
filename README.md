@@ -1,5 +1,5 @@
-# My_App_4th_Nov_2023
-##Here is the way  to create a simple Geth network with 2 Sealers
+# My_Geth_App
+## Here is the way  to create a simple Geth network with 2 Sealers
 
 _----- I have deleted the Data or all the nodes. Follow the below process from the script .txt to progress with the app ------_
 
