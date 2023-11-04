@@ -1,0 +1,83 @@
+cd node1
+geth account new --datadir data
+
+cd .. 
+cd node2
+geth  --datadir data  account new
+
+cd .. 
+cd node3
+geth  --datadir data  account new
+
+===================== Creted Genesis.json=============
+
+cd ..
+
+cd node1
+geth init  --datadir data ../genesis.json
+
+cd ..
+
+cd node2
+geth init  --datadir data ../genesis.json
+
+cd ..
+
+cd node3
+geth init  --datadir data ../genesis.json
+
+
+============= Boot Node =============== (used for nodes to connect to each other)
+
+bootnode -genkey boot.key
+
+bootnode -nodekey boot.key -addr :30305 -verbosity 7
+
+================ Connect Nodes & Start Network ============
+
+Node 3: 
+
+geth --datadir data --port 30306 --bootnodes enode://aef928e3fbddc8cd4ac5d79fdf6200ac1c04d1574b691f37521f3f9eada337b2c44142f4c247ed19c3060db6bdc08f04c1d833d311b77b3f054e2013bd807754@127.0.0.1:0?discport=30305  --networkid 123456789 --ipcdisable --http --allow-insecure-unlock -http.corsdomain "*" --http.port 8547 --http.vhosts "*"  --unlock 0x41d0d86e2350c4b021F6EFd2777ffB9275cB589b --password password.txt --authrpc.port 8551  --miner.etherbase 0x41d0d86e2350c4b021F6EFd2777ffB9275cB589b --mine --syncmode "full" console
+
+Node 2: 
+
+geth --datadir data --port 30307 --bootnodes enode://aef928e3fbddc8cd4ac5d79fdf6200ac1c04d1574b691f37521f3f9eada337b2c44142f4c247ed19c3060db6bdc08f04c1d833d311b77b3f054e2013bd807754@127.0.0.1:0?discport=30305  --networkid 123456789 --ipcdisable --http --allow-insecure-unlock -http.corsdomain "*" --http.port 8548 --http.vhosts "*"  --unlock 0x12b58465855D9669EA78c803D83dd991F377426B --password password.txt --authrpc.port 8552  --miner.etherbase 0x12b58465855D9669EA78c803D83dd991F377426B --mine --syncmode "full" console
+
+
+Node 1: 
+
+geth --datadir data --port 30308 --bootnodes enode://aef928e3fbddc8cd4ac5d79fdf6200ac1c04d1574b691f37521f3f9eada337b2c44142f4c247ed19c3060db6bdc08f04c1d833d311b77b3f054e2013bd807754@127.0.0.1:0?discport=30305  --networkid 123456789 --ipcdisable --http --allow-insecure-unlock -http.corsdomain "*" --http.port 8549 --http.vhosts "*"  --unlock 0x6B3151F1b0aecBEc81B57B1b73eE08900A35bf80 --password password.txt --authrpc.port 8553  --syncmode "full" console
+
+
+===================== Javascript commands fot ETH =====================
+
+eth.getBalance("0x6B3151F1b0aecBEc81B57B1b73eE08900A35bf80")
+
+eth.getBalance("0x12b58465855D9669EA78c803D83dd991F377426B")
+
+eth.getBalance("0x41d0d86e2350c4b021F6EFd2777ffB9275cB589b")
+
+eth.sendTransaction({
+    to :"0x12b58465855D9669EA78c803D83dd991F377426B",
+    from : "0x41d0d86e2350c4b021F6EFd2777ffB9275cB589b",
+    value : 110000000000000000000
+})
+
+eth.getBalance("0x41d0d86e2350c4b021F6EFd2777ffB9275cB589b")
+
+
+=================== Clef to create new account ==============
+ new terminal
+
+ cd node2 
+ clef newaccount -keystore data/keystore/
+
+eth.getBalance("0x18E02122FA32d44966056272Ce677C8575c3A32d")
+
+eth.sendTransaction({
+    to :"0x18E02122FA32d44966056272Ce677C8575c3A32d",
+    from : "0x6B3151F1b0aecBEc81B57B1b73eE08900A35bf80",
+    value : 910000000000000000
+})
+
+eth.getBalance("0x6B3151F1b0aecBEc81B57B1b73eE08900A35bf80")

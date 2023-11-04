@@ -1,0 +1,42 @@
+=============== Nov 4, 2023 (+04) ===============
+13:41:17.305353 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+13:41:17.324844 db@open opening
+13:41:17.330453 version@stat F·[] S·0B[] Sc·[]
+13:41:17.334138 db@janitor F·2 G·0
+13:41:17.334227 db@open done T·9.277732ms
+13:41:17.459611 db@close closing
+13:41:17.460006 db@close done T·392.6µs
+=============== Nov 4, 2023 (+04) ===============
+14:22:57.372318 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:22:57.375196 version@stat F·[] S·0B[] Sc·[]
+14:22:57.375289 db@open opening
+14:22:57.375471 journal@recovery F·1
+14:22:57.481622 journal@recovery recovering @1
+14:22:57.491362 memdb@flush created L0@2 N·15 S·1KiB "7\x0f\b..r\xddI,v2":"ȓ\xce..\xb3{\x11,v4"
+14:22:57.494042 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
+14:22:57.523187 db@janitor F·3 G·0
+14:22:57.523256 db@open done T·147.937111ms
+14:56:41.944797 db@close closing
+14:56:41.949768 db@close done T·4.96789ms
+=============== Nov 4, 2023 (+04) ===============
+14:56:53.758380 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:56:53.759062 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
+14:56:53.759116 db@open opening
+14:56:53.759227 journal@recovery F·1
+14:56:53.761550 journal@recovery recovering @3
+14:56:53.781257 memdb@flush created L0@5 N·3170 S·162KiB "Dat..ion,v17":"unc..own,v25"
+14:56:53.783995 version@stat F·[2] S·163KiB[163KiB] Sc·[0.50]
+14:56:53.824412 db@janitor F·4 G·0
+14:56:53.824545 db@open done T·65.404612ms
+=============== Nov 4, 2023 (+04) ===============
+14:58:08.130254 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:58:08.130587 version@stat F·[2] S·163KiB[163KiB] Sc·[0.50]
+14:58:08.130633 db@open opening
+14:58:08.130742 journal@recovery F·1
+14:58:08.134334 journal@recovery recovering @6
+14:58:08.142013 memdb@flush created L0@8 N·82 S·3KiB "H\x10\xcd..\xfd\x8c\xb2,v3200":"unc..own,v3188"
+14:58:08.144665 version@stat F·[3] S·167KiB[167KiB] Sc·[0.75]
+14:58:08.172853 db@janitor F·5 G·0
+14:58:08.172902 db@open done T·42.249969ms
+15:35:36.314602 db@close closing
+15:35:36.314963 db@close done T·360.116µs
